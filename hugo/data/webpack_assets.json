@@ -1,6 +1,32 @@
 {
   "app": {
-    "css": "/design/css/app.c0f313bd59a6e7428ead.css",
-    "js": "/design/js/app.c0f313bd59a6e7428ead.js"
+    "css": "/design/css/app.50bbd410a02f0dd83868.css",
+    "js": "/design/js/app.50bbd410a02f0dd83868.js"
+  },
+  "": {
+    "ttf": [
+      "/design/webfonts/2E39B5_4_0.ttf",
+      "/design/webfonts/2E39B5_3_0.ttf",
+      "/design/webfonts/2E39B5_0_0.ttf",
+      "/design/webfonts/2E39B5_1_0.ttf"
+    ],
+    "woff": [
+      "/design/webfonts/2E39B5_4_0.woff",
+      "/design/webfonts/2E39B5_0_0.woff",
+      "/design/webfonts/2E39B5_3_0.woff",
+      "/design/webfonts/2E39B5_1_0.woff"
+    ],
+    "eot": [
+      "/design/webfonts/2E39B5_4_0.eot",
+      "/design/webfonts/2E39B5_0_0.eot",
+      "/design/webfonts/2E39B5_3_0.eot",
+      "/design/webfonts/2E39B5_1_0.eot"
+    ],
+    "woff2": [
+      "/design/webfonts/2E39B5_4_0.woff2",
+      "/design/webfonts/2E39B5_0_0.woff2",
+      "/design/webfonts/2E39B5_3_0.woff2",
+      "/design/webfonts/2E39B5_1_0.woff2"
+    ]
   }
 }

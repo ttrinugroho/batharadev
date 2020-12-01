@@ -9,9 +9,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeEnv = process.env.NODE_ENV;
 
 const plugins = [
-  new CleanWebpackPlugin({
-    cleanOnceBeforeBuildPatterns:['js', 'css']
-  }),
+  new CleanWebpackPlugin(),
   new MiniCssExtractPlugin({
     filename: 'css/[name].[chunkhash].css',
     chunkFilename: '[id].css'
@@ -55,11 +53,22 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test:/\.(ttf|eot|woff|woff2|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name:'webfonts/[name].[ext]',
+            output: 'webfonts/'
+          }
+        }
+      },
+      {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           // 'style-loader',
           'css-loader', // translates CSS into CommonJS
+          'resolve-url-loader',
           'sass-loader' // compiles Sass to CSS, using Node Sass by default
         ]
       }

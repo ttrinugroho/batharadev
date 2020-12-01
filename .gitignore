@@ -1,0 +1,10 @@
+**/node_modules
+
+# hugo
+hugo/data/components.json
+hugo/data/webpack_assets.json
+hugo/static/components
+hugo/static/design
+
+# compile output
+public

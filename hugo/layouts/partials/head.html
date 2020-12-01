@@ -1,0 +1,20 @@
+<head>
+  <!-- GTAG -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59099331-16"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-59099331-16');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- JS & CSS -->
+  <script defer src="{{ .Site.Data.webpack_assets.app.js }}"></script>
+  <link rel="preload" as="style" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" >
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  <link rel="preload" as="style" href="{{ .Site.Data.webpack_assets.app.css }}">
+  <link rel="stylesheet" type="text/css" href="{{ .Site.Data.webpack_assets.app.css }}">
+</head>

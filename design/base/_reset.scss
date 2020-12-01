@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+$black: #000;
+$white: #fff;
+$color-primary:#BB86FC;
+$color-secondary:#03DAC5;
+$color-background:#121212;
+$color-on-primary:#000000;
+$color-on-background:#FFFFFF;
+
+:root {
+  --theme-color: #2c3e50;
+  --theme-layout: #fff;
+  --theme-btn: #BB86FC;
+  --theme-bg2: #eef2f5;
+  --bg-primary: #3700B3;
+  --d-none: none;
+  --w-none: flex;
+}
+
+[data-theme="dark"] {
+  --theme-color: #fff;
+  --theme-layout: #121212;
+  --theme-bg2: #141417;
+  --d-none: flex;
+  --w-none: none;
+  transition: all 2s ease-in-out;
+}
+
+html {
+  // is defines what 1rem is 10px
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color:#03DAC5;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(0deg, rgba($white, 0.09), rgba($white, 0.09)), var(--theme-layout);
+  box-shadow: 0px 4px 5px rgba($black, 0.14), 0px 1px 10px rgba($black, 0.12), 0px 2px 4px rgba($black, 0.2);
+  transition: all 10s ease 4;
+}
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity .5s ease 2s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  background-color: var(--theme-layout);
+  color: var(--theme-color);
+}
+
+::selection {
+  background-color: $color-secondary;
+  color: var(--theme-layout);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==xs {
+    @media (min-width: 0) {
+      @content
+    }
+  }
+
+  @if $breakpoint==sm {
+    @media (min-width: 600px) {
+      @content
+    }
+  }
+
+  @if $breakpoint==md {
+    @media (min-width: 960px) {
+      @content
+    }
+  }
+
+  @if $breakpoint==lg {
+    @media (min-width: 1280px) {
+      @content
+    }
+  }
+
+  @if $breakpoint==xl {
+    @media (min-width: 1920px) {
+      @content
+    }
+  }
+}

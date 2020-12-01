@@ -1,0 +1,11 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+publishDir = "../public"
+
+pygmentsUseClasses = true
+enableRobotsTXT = true
+[output]
+isPlainText = true
+[markup.goldmark.renderer]
+unsafe= false

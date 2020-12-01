@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="article-wrap">
+  <div class="grid grid-4">
+    <div class="grid__item grid__item-md-true">
+      <main style="border-radius: 0 0 4px 4px;" class="elevation-03dp" id="main-content">
+        <article class="content">
+          <header class="content__header">
+            <h1>{{ .Title }}</h1>
+            <hr>
+            <p><em>last update </em><time>{{ dateFormat "Jan 2, 2006" .Date }}</time></p>
+          </header>
+          <div class="content__text" itemprop="text">
+            {{ .Content }}
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+</div>
+{{ end }}

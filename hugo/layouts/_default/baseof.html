@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" .}}
+{{ $free := .Params.fullwidth }}
+<body {{ if $free }} class="full-width" {{ end }} data-theme="dark">
+  {{ block "header" .}}
+  {{ partial "header.html" . }}
+  {{ end }}
+  <div class="wrap">
+    {{ block "main" . }}{{ end }}
+  </div>
+  
+  {{ block "footer" . }}
+  {{ partial "footer.html" . }}
+  {{ end }}
+  {{ partial "config.html" . }}
+</body>
+
+</html>

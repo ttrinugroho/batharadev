@@ -1,0 +1,94 @@
+.wrap {
+    @include respond(md) {
+        max-width: 960px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include respond(lg) {
+        max-width: 1200px;
+    }
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.config {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 12000;
+    border: 0;
+    border-radius: 0 20px 0 0;
+    outline: none;
+    box-shadow: 0 0 4px 0 rgba($black, .2);
+    & &__btn{
+        width: 40px;
+        height: 45px;
+        border-radius: 0;
+        font-size: 20px;
+        color:var(--theme-color);
+    }
+    & button {
+        width: auto;
+        height: 45px;
+        border: 0;
+        position: relative;
+        border-radius: 0 20px 0 0;
+        background: linear-gradient(0deg, rgba($white, 0.1), rgba($white, 0.1)),var(--theme-layout);
+    }
+
+    &__switch {
+        width: 60px;
+        height: 32px;
+        background: var(--theme-layout);
+        border-radius: 20px;
+        box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .15);
+
+        .circle {
+            width: 23px;
+            height: 23px;
+            background: linear-gradient(0deg, rgba($white, 0.1), rgba($white, 0.1)),var(--theme-layout);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 5px;
+            box-shadow: inset 0 5px 15px 0 rgba($black, .15);
+            transition: transform .25s ease, width .25s ease ;
+            transform: translate(0);
+
+            &-dark {
+                display: var(--d-none);
+                & i {
+                    transform: translate(27px);
+                    color: var(--theme-color);
+                }
+            }
+
+            &-light {
+                display: var(--w-none);
+                transform: translate(27px);
+                & i {
+                    transform: translate(-27px);
+                    color: var(--theme-color);
+                }
+            }
+
+        }
+    }
+
+    &,
+    & button {
+        transition: all .25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        cursor: pointer;
+    }
+
+}

@@ -1,0 +1,62 @@
+.grid {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__item {
+    box-sizing: border-box;
+    margin: 0; // For instance, it's useful when used with a `figure` element.
+  }
+}
+
+$SPACINGS : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+$GRID_SIZES :'auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+$bp: "xs", "sm", "md", "lg", "xl";
+
+@each $poin in $bp {
+  @each $size in $GRID_SIZES {
+    //flex: [flex-grow] [flex-shrink] [flex-basis];
+    .grid__item-#{$poin}-#{$size} {
+      @if $size==true {
+        @include respond($poin) {
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+        }
+      }
+
+      @else if $size=='auto' {
+        @include respond($poin) {
+          flex-basis: auto;
+          flex-grow: 0;
+          max-width: none;
+        }
+      }
+
+      @else {
+        @include respond($poin) {
+          $width: $size/12*100000000/1000000;
+          flex-basis: $width*1%;
+          flex-grow: 0;
+          max-width: $width*1%;
+        }
+      }
+    }
+  }
+}
+
+@each $space in $SPACINGS {
+  @if $space==0{
+
+  }
+  .grid-#{$space} {
+    
+    margin: -($space*4px);
+    width: calc(100% + #{$space*8px});
+    & > .grid__item {
+      padding: $space*4px;
+    }
+  }
+}
